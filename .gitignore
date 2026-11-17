@@ -1,0 +1,15 @@
+.env
+airflow/.env
+keys/
+*.p8
+*.pem
+index.json
+audit_log.jsonl
+eval_results.json
+__pycache__/
+*.pyc
+airflow/logs/
+airflow/config/export/
+airflow/config/snowflake_key.*
+airflow/config/airflow.cfg
+airflow/test_azure.py
