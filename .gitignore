@@ -13,3 +13,4 @@ airflow/config/export/
 airflow/config/snowflake_key.*
 airflow/config/airflow.cfg
 airflow/test_azure.py
+*.key
