@@ -1,3 +1,5 @@
+import sys
+
 from sql_guard import validate_sql, SqlRejected
 
 cases = [
@@ -11,10 +13,15 @@ cases = [
     ("SELECT 1 -- sneaky", False),
     ("Sorry, I cannot help with that", False),
 ]
+bugs = 0
 for sql, should_pass in cases:
     try:
         validate_sql(sql)
         ok = True
     except SqlRejected:
         ok = False
+    if ok != should_pass:
+        bugs += 1
     print("OK  " if ok == should_pass else "BUG ", sql[:60])
+
+sys.exit(1 if bugs else 0)
