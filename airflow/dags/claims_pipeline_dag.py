@@ -4,8 +4,8 @@ from datetime import datetime, timedelta
 
 from airflow.sdk import dag, task
 
-ACCOUNT = "DDVSDLP-NO77753"
-USER = "AIRFLOW_SVC"
+ACCOUNT = os.environ["SNOWFLAKE_ACCOUNT"]
+USER = os.environ["SNOWFLAKE_USER"]
 KEY_PATH = "/opt/airflow/config/snowflake_key.p8"
 EXPORT_DIR = "/opt/airflow/config/export"
 STAGE = "@CLAIMS_DB.GOLD.EXPORTS_STAGE"
